@@ -1,0 +1,756 @@
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-height: 600px;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  /*
+    Warm premium white
+  */
+  background: #f7f5f1;
+
+  color: #111111;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND
+   =========================================================
+
+   Base:
+   #f7f5f1
+
+   Orange:
+   Only subtle corner accents
+   ========================================================= */
+
+.hero__background {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  background:
+
+    /* TOP LEFT */
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(224, 101, 43, 0.13) 0%,
+      rgba(224, 101, 43, 0.05) 13%,
+      transparent 27%
+    ),
+    /* TOP RIGHT */
+    radial-gradient(
+        circle at 100% 0%,
+        rgba(224, 101, 43, 0.12) 0%,
+        rgba(224, 101, 43, 0.045) 13%,
+        transparent 27%
+      ),
+    /* BOTTOM LEFT */
+    radial-gradient(
+        circle at 0% 100%,
+        rgba(224, 101, 43, 0.1) 0%,
+        rgba(224, 101, 43, 0.035) 13%,
+        transparent 27%
+      ),
+    /* BOTTOM RIGHT */
+    radial-gradient(
+        circle at 100% 100%,
+        rgba(224, 101, 43, 0.11) 0%,
+        rgba(224, 101, 43, 0.04) 13%,
+        transparent 27%
+      ),
+    #f7f5f1;
+}
+
+/* =========================================================
+   WALKING VIDEO
+   EXACTLY 90VH
+   BOTTOM ALIGNED
+   ========================================================= */
+
+.hero__video-wrapper {
+  position: absolute;
+
+  left: 53%;
+  bottom: 0;
+
+  width: auto;
+  height: 90vh;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.hero__video {
+  display: block;
+
+  width: auto;
+  height: 90vh;
+
+  max-width: none;
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  object-position: center bottom;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+
+  filter: contrast(1.04) brightness(0.96) saturate(0.9);
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   IDENTITY
+   ========================================================= */
+
+.hero__identity {
+  position: absolute;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   LEFT NAME
+   ========================================================= */
+
+.hero__identity--left {
+  left: clamp(30px, 7vw, 130px);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  text-align: left;
+}
+
+/* =========================================================
+   SMALL LABEL
+   ========================================================= */
+
+.hero__small-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family: Inter, Arial, sans-serif;
+
+  font-size: clamp(8px, 0.65vw, 12px);
+
+  font-weight: 600;
+
+  letter-spacing: 0.38em;
+
+  color: #8b8178;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SURYA
+   ========================================================= */
+
+.hero__identity--left h1 {
+  margin: 0;
+
+  font-family: "Times New Roman", Georgia, serif;
+
+  font-size: clamp(80px, 10vw, 180px);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: 0.025em;
+
+  color: #111111;
+
+  white-space: nowrap;
+
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   RIGHT ROLE
+   ========================================================= */
+
+.hero__identity--right {
+  right: clamp(30px, 7vw, 130px);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  text-align: left;
+}
+
+/* =========================================================
+   ORANGE ACCENT LINE
+   ========================================================= */
+
+.hero__line {
+  display: block;
+
+  width: 70px;
+  height: 1px;
+
+  margin-bottom: 22px;
+
+  background: linear-gradient(90deg, #c86632, rgba(200, 102, 50, 0.1));
+}
+
+/* =========================================================
+   ROLE TITLE
+   ========================================================= */
+
+.hero__identity--right h2 {
+  margin: 0;
+
+  font-family: "Times New Roman", Georgia, serif;
+
+  font-size: clamp(30px, 3.2vw, 60px);
+
+  font-weight: 500;
+
+  line-height: 1.02;
+
+  letter-spacing: 0.035em;
+
+  color: #111111;
+
+  white-space: nowrap;
+}
+
+/* DEVELOPER */
+
+.hero__identity--right h2 span {
+  color: #3a3531;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero__identity--right p {
+  margin: 24px 0 0;
+
+  font-family: Inter, Arial, sans-serif;
+
+  font-size: clamp(7px, 0.6vw, 11px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  color: #8b8178;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BLACK CINEMATIC COVER
+   ========================================================= */
+
+.hero__door {
+  position: absolute;
+
+  left: 0;
+
+  width: 100vw;
+
+  background: #000000;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  will-change: transform;
+
+  /*
+    VERY SLOW REVEAL
+  */
+
+  transition: transform 5.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+/* =========================================================
+   TOP COVER
+   ========================================================= */
+
+.hero__door--top {
+  top: 0;
+
+  height: 50%;
+
+  transform: translateY(0);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   BOTTOM COVER
+   ========================================================= */
+
+.hero__door--bottom {
+  bottom: 0;
+
+  height: 50%;
+
+  transform: translateY(0);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   OPEN FROM CENTER
+   ========================================================= */
+
+.hero__door--top.hero__door--open {
+  transform: translateY(-100%);
+}
+
+.hero__door--bottom.hero__door--open {
+  transform: translateY(100%);
+}
+
+/* =========================================================
+   CENTER SEAM
+   ========================================================= */
+
+.hero__door--top::after,
+.hero__door--bottom::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  width: 1px;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+
+    rgba(255, 255, 255, 0.06) 40%,
+
+    rgba(255, 255, 255, 0.18) 50%,
+
+    rgba(255, 255, 255, 0.06) 60%,
+
+    transparent 100%
+  );
+
+  opacity: 0.35;
+}
+
+/* =========================================================
+   WHITE BACKGROUND VIGNETTE
+   ========================================================= */
+
+.hero__vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 7;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at center,
+
+    transparent 48%,
+
+    rgba(70, 55, 45, 0.025) 72%,
+
+    rgba(40, 30, 20, 0.09) 100%
+  );
+}
+
+/* =========================================================
+   FILM GRAIN
+   ========================================================= */
+
+.hero__grain {
+  position: absolute;
+
+  inset: -50%;
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  opacity: 0.025;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+  animation: grainMove 0.18s steps(2) infinite;
+}
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.hero__scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 28px;
+
+  transform: translateX(-50%);
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  opacity: 0.6;
+}
+
+.hero__scroll span {
+  width: 1px;
+  height: 28px;
+
+  background: linear-gradient(to bottom, transparent, #3b3632);
+
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+
+.hero__scroll p {
+  margin: 0;
+
+  font-family: Inter, Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.32em;
+
+  color: #756d66;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes grainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-2%, 1%);
+  }
+
+  50% {
+    transform: translate(1%, -2%);
+  }
+
+  75% {
+    transform: translate(2%, 2%);
+  }
+
+  100% {
+    transform: translate(-1%, -1%);
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: translateY(5px);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero {
+    width: 100vw;
+    height: 100svh;
+  }
+
+  .hero__video-wrapper {
+    left: 50%;
+    bottom: 0;
+
+    height: 90vh;
+
+    transform: translateX(-50%);
+  }
+
+  .hero__video {
+    height: 90vh;
+  }
+
+  .hero__identity--left {
+    left: 4vw;
+  }
+
+  .hero__identity--right {
+    right: 4vw;
+  }
+
+  .hero__identity--left h1 {
+    font-size: clamp(60px, 10vw, 110px);
+  }
+
+  .hero__identity--right h2 {
+    font-size: clamp(26px, 3.5vw, 44px);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .hero {
+    width: 100vw;
+
+    height: 100svh;
+
+    min-height: 600px;
+  }
+
+  /* MOBILE BACKGROUND */
+
+  .hero__background {
+    background:
+      radial-gradient(
+        circle at 0% 0%,
+        rgba(224, 101, 43, 0.12),
+        transparent 27%
+      ),
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(224, 101, 43, 0.11),
+        transparent 27%
+      ),
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(224, 101, 43, 0.09),
+        transparent 27%
+      ),
+      radial-gradient(
+        circle at 100% 100%,
+        rgba(224, 101, 43, 0.1),
+        transparent 27%
+      ),
+      #f7f5f1;
+  }
+
+  /* VIDEO */
+
+  .hero__video-wrapper {
+    left: 50%;
+
+    top: auto;
+    bottom: 0;
+
+    height: 64svh;
+    width: auto;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero__video {
+    height: 100%;
+
+    width: auto;
+
+    max-width: none;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+  }
+
+  /* NAME */
+
+  .hero__identity--left {
+    left: 50%;
+
+    top: max(70px, 9svh);
+
+    width: max-content;
+    transform: translateX(-50%);
+
+    z-index: 8;
+    text-align: center;
+  }
+
+  .hero__small-label {
+    margin-bottom: 8px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.25em;
+
+    text-align: center;
+  }
+
+  .hero__identity--left h1 {
+    font-size: clamp(42px, 13vw, 60px);
+
+    line-height: 0.82;
+  }
+
+  /* ROLE */
+
+  .hero__identity--right {
+    left: 50%;
+
+    right: auto;
+
+    top: calc(max(70px, 9svh) + clamp(90px, 17vw, 105px));
+
+    bottom: auto;
+
+    width: max-content;
+    transform: translateX(-50%);
+
+    z-index: 8;
+    text-align: center;
+  }
+
+  .hero__line {
+    width: 42px;
+
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
+  .hero__identity--right h2 {
+    font-size: clamp(25px, 8vw, 40px);
+
+    line-height: 0.98;
+  }
+
+  .hero__identity--right p {
+    margin-top: 10px;
+
+    font-size: 5px;
+
+    letter-spacing: 0.16em;
+  }
+
+  /* SCROLL */
+
+  .hero__scroll {
+    bottom: 16px;
+  }
+
+  .hero__scroll p {
+    font-size: 5px;
+
+    letter-spacing: 0.18em;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .hero__identity--left {
+    left: 50%;
+    top: max(70px, 9svh);
+  }
+
+  .hero__identity--left h1 {
+    font-size: clamp(42px, 13vw, 54px);
+  }
+
+  .hero__identity--right {
+    left: 50%;
+    top: calc(max(70px, 9svh) + clamp(90px, 17vw, 105px));
+    bottom: auto;
+  }
+
+  .hero__identity--right h2 {
+    font-size: 24px;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__door {
+    transition: none;
+  }
+
+  .hero__grain,
+  .hero__scroll span {
+    animation: none;
+  }
+}

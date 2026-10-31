@@ -1,0 +1,1026 @@
+/* =========================================================
+   ENGINEERING STACK
+   ========================================================= */
+
+.engineering-stack {
+  --section-extra-height: 20px;
+
+  --stack-accent: #c66a3a;
+  --stack-black: #111111;
+  --stack-muted: #77736d;
+  --stack-line: rgba(17, 17, 17, 0.1);
+
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity 0.9s var(--reveal-easing),
+    transform 1.1s var(--reveal-easing);
+
+  position: relative;
+
+  width: 100%;
+
+  height: calc(
+    100dvh - var(--header-height, 72px) + var(--section-extra-height)
+  );
+
+  min-height: 630px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  color: var(--stack-black);
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   REMOVE ALL SECTION EFFECTS
+   ========================================================= */
+
+.engineering-stack::before,
+.engineering-stack::after {
+  content: none;
+  display: none;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.engineering-stack.is-visible,
+.engineering-stack--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.engineering-stack__inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(500px, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  gap: clamp(15px, 2.5vw, 42px);
+
+  padding: clamp(30px, 5vh, 55px) clamp(32px, 6vw, 105px) 25px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.engineering-stack__content {
+  position: relative;
+
+  min-width: 0;
+
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  z-index: 5;
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.engineering-stack--visible .engineering-stack__content {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.engineering-stack__eyebrow {
+  margin-bottom: 18px;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  color: #6d6962;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.engineering-stack__heading h2 {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: var(--heading);
+
+  font-size: clamp(44px, 4.15vw, 72px);
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.08em;
+
+  text-transform: uppercase;
+
+  color: #111111;
+}
+
+.engineering-stack__heading h2 .reveal-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s var(--reveal-easing),
+    transform 0.9s var(--reveal-easing);
+}
+
+.engineering-stack--visible .engineering-stack__heading h2 .reveal-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.engineering-stack__heading h2 .reveal-line:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.engineering-stack__heading h2 .reveal-line:nth-child(3) {
+  transition-delay: 0.22s;
+}
+
+.engineering-stack__heading h2 .reveal-line--accent {
+  color: var(--stack-accent);
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.engineering-stack__heading p {
+  max-width: 410px;
+
+  margin: 18px 0 24px;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  color: var(--stack-muted);
+}
+
+/* =========================================================
+   GROUP CONTAINER
+   ========================================================= */
+
+.engineering-stack__groups {
+  width: 100%;
+
+  border-top: 1px solid var(--stack-line);
+}
+
+.stack-group {
+  border-bottom: 1px solid var(--stack-line);
+}
+
+/* =========================================================
+   GROUP HEADER
+   ========================================================= */
+
+.stack-group__header {
+  appearance: none;
+
+  width: 100%;
+
+  border: 0;
+
+  background: transparent;
+
+  padding: 9px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    34px
+    minmax(0, 1fr)
+    26px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  color: inherit;
+}
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.stack-group__number {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  color: #aaa59d;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.stack-group__title-wrap {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 12px;
+}
+
+.stack-group__title {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: #25231f;
+
+  transition: color 0.3s ease;
+}
+
+.stack-group__description {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 10px;
+
+  color: #99948c;
+}
+
+/* =========================================================
+   GROUP ARROW
+   ========================================================= */
+
+.stack-group__arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid rgba(17, 17, 17, 0.13);
+
+  border-radius: 50%;
+
+  font-size: 13px;
+
+  color: #77736d;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stack-group--active .stack-group__title {
+  color: var(--stack-accent);
+}
+
+.stack-group--active .stack-group__arrow {
+  background: var(--stack-accent);
+
+  border-color: var(--stack-accent);
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.stack-group__skills {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 6px 8px;
+
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-5px);
+
+  transition:
+    max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+.stack-group__skills--open {
+  max-height: 180px;
+
+  padding: 2px 0 11px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   SKILL CARD
+   ========================================================= */
+
+.stack-skill {
+  position: relative;
+
+  min-width: 0;
+
+  appearance: none;
+
+  border: 1px solid rgba(17, 17, 17, 0.08);
+
+  background: #ffffff;
+
+  padding: 8px 10px;
+
+  display: grid;
+
+  grid-template-columns:
+    29px
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    auto;
+
+  column-gap: 9px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stack-skill:hover,
+.stack-skill--active {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  border-color: rgba(198, 106, 58, 0.38);
+
+  box-shadow: 0 8px 25px rgba(17, 17, 17, 0.045);
+}
+
+/* =========================================================
+   SKILL MARK
+   ========================================================= */
+
+.stack-skill__mark {
+  grid-row: 1 / span 2;
+
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(17, 17, 17, 0.13);
+
+  border-radius: 50%;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  color: #55514b;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stack-skill--active .stack-skill__mark {
+  background: var(--stack-accent);
+
+  border-color: var(--stack-accent);
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   SKILL NAME
+   ========================================================= */
+
+.stack-skill__name {
+  align-self: end;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  color: #292722;
+}
+
+/* =========================================================
+   SKILL DETAIL
+   ========================================================= */
+
+.stack-skill__detail {
+  align-self: start;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  font-size: 8px;
+
+  color: #9a958d;
+}
+
+/* =========================================================
+   ACTIVE INDICATOR
+   ========================================================= */
+
+.stack-skill__indicator {
+  position: absolute;
+
+  left: 0;
+
+  top: 7px;
+  bottom: 7px;
+
+  width: 2px;
+
+  border-radius: 10px;
+
+  background: var(--stack-accent);
+
+  opacity: 0;
+
+  transform: scaleY(0);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.stack-skill--active .stack-skill__indicator {
+  opacity: 1;
+
+  transform: scaleY(1);
+}
+
+/* =========================================================
+   VIDEO AREA
+   ========================================================= */
+
+.engineering-stack__visual {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  transform: translateX(18px) scale(0.99);
+
+  transition:
+    opacity 1s ease 0.1s,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+.engineering-stack--visible .engineering-stack__visual {
+  opacity: 1;
+
+  transform: translateX(0) scale(1);
+}
+
+/* =========================================================
+   VIDEO WRAPPER
+
+   IMPORTANT:
+   THERE IS NO MASK HERE.
+
+   THERE IS NO BORDER.
+
+   THERE IS NO SHADOW.
+
+   THERE IS NO GRADIENT.
+
+   THERE IS NO BACKGROUND.
+
+   THE SECTION ITSELF IS WHITE.
+   ========================================================= */
+
+.engineering-stack__video-wrap {
+  position: relative;
+
+  width: min(44vw, 660px);
+
+  height: min(
+    calc(100dvh - var(--header-height, 72px) + var(--section-extra-height)),
+    600px
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: visible;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   VIDEO
+
+   THIS IS THE IMPORTANT PART.
+
+   The uploaded video has a light gray background.
+
+   Brightness pushes that background toward pure white.
+
+   Contrast keeps the black suit dark.
+
+   No blend mode.
+   No artificial overlay.
+   No mask.
+   ========================================================= */
+
+.engineering-stack__video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center center;
+
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  /*
+    Background correction.
+
+    The source video has a light-gray studio
+    background. This pushes it toward #ffffff
+    while retaining the dark subject.
+  */
+  filter: brightness(1.18) contrast(1.08) saturate(0.94);
+
+  /*
+    IMPORTANT:
+    Do NOT use multiply/screen here.
+  */
+  mix-blend-mode: normal;
+
+  opacity: 1;
+
+  transform: scale(1.035);
+
+  transform-origin: center center;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+/* =========================================================
+   NO VIDEO PSEUDO ELEMENTS
+   ========================================================= */
+
+.engineering-stack__video-wrap::before,
+.engineering-stack__video-wrap::after {
+  content: none;
+
+  display: none;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+  .engineering-stack {
+    --section-extra-height: 20px;
+  }
+
+  .engineering-stack__inner {
+    grid-template-columns:
+      minmax(520px, 0.96fr)
+      minmax(520px, 1.04fr);
+  }
+
+  .engineering-stack__heading h2 {
+    font-size: clamp(54px, 4vw, 72px);
+  }
+
+  .engineering-stack__video-wrap {
+    width: min(44vw, 680px);
+
+    height: min(
+      calc(100dvh - var(--header-height, 72px) + var(--section-extra-height)),
+      610px
+    );
+  }
+
+  .engineering-stack__video {
+    transform: scale(1.045);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .engineering-stack {
+    --section-extra-height: 15px;
+
+    min-height: 630px;
+  }
+
+  .engineering-stack__inner {
+    grid-template-columns:
+      minmax(360px, 0.92fr)
+      minmax(380px, 1.08fr);
+
+    gap: 18px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .engineering-stack__heading h2 {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+
+  .engineering-stack__video-wrap {
+    width: 44vw;
+
+    height: 550px;
+  }
+
+  .engineering-stack__video {
+    transform: scale(1.025);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .engineering-stack {
+    --section-extra-height: 15px;
+
+    height: calc(
+      100svh - var(--header-height, 64px) + var(--section-extra-height)
+    );
+
+    min-height: 640px;
+
+    background: #ffffff;
+  }
+
+  .engineering-stack__inner {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 28px 20px 0;
+
+    background: #ffffff;
+  }
+
+  /* =====================================================
+     CONTENT
+     ===================================================== */
+
+  .engineering-stack__content {
+    width: 100%;
+
+    max-width: none;
+
+    display: block;
+
+    flex: 0 0 auto;
+
+    z-index: 5;
+  }
+
+  .engineering-stack__eyebrow {
+    margin-bottom: 11px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.22em;
+  }
+
+  .engineering-stack__heading h2 {
+    font-size: clamp(32px, 9vw, 46px);
+
+    line-height: 0.88;
+  }
+
+  .engineering-stack__heading p {
+    margin: 12px 0 15px;
+
+    max-width: 310px;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+  /* =====================================================
+     GROUPS
+     ===================================================== */
+
+  .engineering-stack__groups {
+    position: relative;
+
+    z-index: 10;
+  }
+
+  .stack-group__header {
+    padding: 6px 0;
+
+    grid-template-columns:
+      25px
+      minmax(0, 1fr)
+      22px;
+
+    gap: 7px;
+  }
+
+  .stack-group__number {
+    font-size: 7px;
+  }
+
+  .stack-group__title {
+    font-size: 8px;
+  }
+
+  .stack-group__description {
+    display: none;
+  }
+
+  .stack-group__arrow {
+    width: 19px;
+    height: 19px;
+
+    font-size: 11px;
+  }
+
+  .stack-group__skills--open {
+    max-height: 110px;
+
+    padding-bottom: 6px;
+  }
+
+  .stack-skill {
+    padding: 6px;
+
+    grid-template-columns:
+      22px
+      minmax(0, 1fr);
+
+    column-gap: 6px;
+  }
+
+  .stack-skill__mark {
+    width: 22px;
+    height: 22px;
+
+    font-size: 6px;
+  }
+
+  .stack-skill__name {
+    font-size: 8px;
+  }
+
+  .stack-skill__detail {
+    display: none;
+  }
+
+  /* =====================================================
+     MOBILE VIDEO
+     ===================================================== */
+
+  .engineering-stack__visual {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 47%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background: #ffffff;
+  }
+
+  .engineering-stack__video-wrap {
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+  }
+
+  .engineering-stack__video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    /*
+      Slightly stronger correction on mobile
+      because the video occupies a larger
+      percentage of the viewport.
+    */
+    filter: brightness(1.18) contrast(1.08) saturate(0.94);
+
+    transform: scale(1.015);
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .engineering-stack {
+    --section-extra-height: 10px;
+
+    min-height: 620px;
+  }
+
+  .engineering-stack__inner {
+    padding-top: 24px;
+  }
+
+  .engineering-stack__heading h2 {
+    font-size: 30px;
+  }
+
+  .engineering-stack__visual {
+    height: 45%;
+  }
+
+  .engineering-stack__video {
+    transform: scale(1.01);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .engineering-stack__content,
+  .engineering-stack__visual {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .stack-group__skills,
+  .stack-skill,
+  .stack-group__arrow,
+  .stack-skill__mark {
+    transition: none;
+  }
+
+  .engineering-stack__video {
+    transform: none;
+  }
+}

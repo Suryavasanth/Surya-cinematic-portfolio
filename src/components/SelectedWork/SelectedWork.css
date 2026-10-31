@@ -1,0 +1,1503 @@
+/* =========================================================
+   SELECTED WORK
+========================================================= */
+
+.selected-work {
+  --paper: #f7f4ef;
+  --ink: #171411;
+  --muted: #817970;
+  --accent: #c96d3d;
+  --line: rgba(23, 20, 17, 0.13);
+
+  --header-height: 72px;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.9s var(--reveal-easing),
+    transform 1.1s var(--reveal-easing);
+
+  /*
+    0px = exact viewport height after header
+
+    Increase this only if you intentionally want
+    the section taller than the viewport.
+  */
+  --section-extra-height: 10px;
+
+  position: relative;
+
+  width: 100%;
+
+  height: calc(100dvh - var(--header-height) + var(--section-extra-height));
+
+  min-height: 680px;
+
+  overflow: hidden;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   RIGHT SIDE SOFT WHITE LIGHT
+========================================================= */
+
+.selected-work__light {
+  position: absolute;
+
+  z-index: 0;
+
+  top: -30%;
+  right: -12%;
+
+  width: 82%;
+  height: 150%;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 70% 50%,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.92) 30%,
+    rgba(255, 255, 255, 0.65) 52%,
+    rgba(255, 255, 255, 0.28) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  filter: blur(38px);
+
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.selected-work.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.selected-work__inner {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 6px 4.8vw 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   TOP AREA
+========================================================= */
+
+.selected-work__top {
+  flex: 0 0 68px;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  position: relative;
+
+  z-index: 100;
+
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--reveal-easing),
+    transform 0.9s var(--reveal-easing);
+}
+
+.selected-work.is-visible .selected-work__top {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   SELECTED WORK LABEL
+========================================================= */
+
+.selected-work__eyebrow {
+  margin: 0;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  line-height: 1;
+
+  color: var(--muted);
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   CENTER TOGGLE WRAPPER
+========================================================= */
+
+.selected-work__top-filter {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* =========================================================
+   PREMIUM CATEGORY TOGGLE
+========================================================= */
+
+.work-filters {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 3px;
+
+  border: 1px solid rgba(23, 20, 17, 0.13);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.48);
+
+  box-shadow: 0 6px 22px rgba(23, 20, 17, 0.045);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================================================
+   TOGGLE BUTTON
+========================================================= */
+
+.work-filter {
+  min-width: 82px;
+
+  height: 30px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #938b83;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.work-filter:hover {
+  color: var(--ink);
+}
+
+.work-filter.active {
+  background: var(--ink);
+
+  color: var(--paper);
+
+  box-shadow: 0 5px 15px rgba(23, 20, 17, 0.16);
+}
+
+/* =========================================================
+   MAIN STAGE
+========================================================= */
+
+.selected-work__stage {
+  flex: 1;
+
+  min-height: 0;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(450px, 0.92fr)
+    minmax(560px, 1.08fr);
+
+  column-gap: 18px;
+
+  overflow: visible;
+
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.9s var(--reveal-easing),
+    transform 1s var(--reveal-easing);
+}
+
+.selected-work.is-visible .selected-work__stage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   DEVICE AREA
+========================================================= */
+
+.work-device-area {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: visible;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   DEVICE
+========================================================= */
+
+.device {
+  position: relative;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  isolation: isolate;
+
+  overflow: visible;
+
+  z-index: 5;
+}
+
+/* =========================================================
+   DEVICE FRAME
+========================================================= */
+
+.device-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: fill;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 30;
+}
+
+/* =========================================================
+   DEVICE SCREEN
+========================================================= */
+
+.device-screen {
+  position: absolute;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  isolation: isolate;
+
+  z-index: 20;
+}
+
+.device-screen img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: fill;
+
+  object-position: center;
+
+  background: #fff;
+
+  animation: selectedWorkScreenIn 0.4s ease both;
+}
+
+/* =========================================================
+   SCREEN ANIMATION
+========================================================= */
+
+@keyframes selectedWorkScreenIn {
+  from {
+    opacity: 0;
+
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   MOBILE DEVICE
+========================================================= */
+
+.device--mobile {
+  width: min(300px, 25vw);
+
+  aspect-ratio: 1024 / 1536;
+
+  height: auto;
+}
+
+.device-screen--mobile {
+  top: 5.35%;
+
+  left: 16.5%;
+
+  width: 67%;
+
+  height: 89.3%;
+
+  border-radius: 7.5%;
+
+  overflow: hidden;
+
+  z-index: 20;
+}
+
+/* =========================================================
+   WEBSITE MONITOR
+========================================================= */
+
+.device--website {
+  width: min(600px, 42vw);
+
+  aspect-ratio: 2048 / 1536;
+
+  height: auto;
+}
+
+.device-screen--website {
+  top: 8.65%;
+
+  left: 8.25%;
+
+  width: 83.5%;
+
+  height: 67.25%;
+
+  border-radius: 1px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  z-index: 20;
+}
+
+.device-screen--website img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  object-position: center;
+}
+
+/* =========================================================
+   KIOSK
+========================================================= */
+
+.device--kiosk {
+  width: min(390px, 31vw);
+
+  aspect-ratio: 1024 / 1536;
+
+  height: auto;
+
+  z-index: 10;
+}
+
+.device--kiosk .device-screen {
+  z-index: 50;
+}
+
+.device-screen--kiosk {
+  top: 2.3%;
+
+  left: 30.4%;
+
+  width: 39.1%;
+
+  height: 52.1%;
+
+  border-radius: 1.8%;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  z-index: 50;
+}
+
+.device--kiosk .device-screen img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  z-index: 51;
+}
+
+/* =========================================================
+   SCREEN ARROWS
+========================================================= */
+
+.screen-arrow {
+  position: absolute;
+
+  z-index: 100;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 1px solid rgba(23, 20, 17, 0.13);
+
+  border-radius: 50%;
+
+  background: rgba(247, 244, 239, 0.82);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  color: var(--ink);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.screen-arrow:hover {
+  background: var(--ink);
+
+  color: var(--paper);
+
+  transform: scale(1.06);
+}
+
+.screen-arrow--left {
+  left: 1%;
+}
+
+.screen-arrow--right {
+  right: 1%;
+}
+
+/* =========================================================
+   SCREEN DOTS
+========================================================= */
+
+.screen-indicator {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 7px;
+
+  transform: translateX(-50%);
+
+  z-index: 110;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.screen-dot {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(23, 20, 17, 0.18);
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.screen-dot.active {
+  width: 22px;
+
+  background: var(--accent);
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   RIGHT COLUMN
+========================================================= */
+
+.work-right {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: visible;
+}
+
+/* =========================================================
+   VIDEO AREA
+========================================================= */
+
+.work-video-area {
+  position: relative;
+
+  width: 100%;
+
+  height: 64%;
+
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  overflow: visible;
+
+  background: transparent;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   VIDEO WRAPPER
+========================================================= */
+
+.work-video {
+  position: relative;
+
+  width: min(790px, 108%);
+
+  height: 100%;
+
+  margin-right: -4%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  overflow: visible;
+
+  background: transparent;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   WORK VIDEO
+   FOUR-SIDE FEATHER
+========================================================= */
+
+.work-video video {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: right center;
+
+  background: transparent;
+
+  mix-blend-mode: multiply;
+
+  opacity: 0.96;
+
+  filter: brightness(1.045) contrast(0.98) saturate(0.95);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 5%,
+      #000 13%,
+      #000 82%,
+      rgba(0, 0, 0, 0.82) 89%,
+      rgba(0, 0, 0, 0.35) 96%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 4%,
+      #000 12%,
+      #000 80%,
+      rgba(0, 0, 0, 0.75) 88%,
+      rgba(0, 0, 0, 0.28) 96%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 5%,
+      #000 13%,
+      #000 82%,
+      rgba(0, 0, 0, 0.82) 89%,
+      rgba(0, 0, 0, 0.35) 96%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 4%,
+      #000 12%,
+      #000 80%,
+      rgba(0, 0, 0, 0.75) 88%,
+      rgba(0, 0, 0, 0.28) 96%,
+      transparent 100%
+    );
+
+  -webkit-mask-composite: source-in;
+
+  mask-composite: intersect;
+}
+
+/* =========================================================
+   VIDEO SOFT LIGHT
+========================================================= */
+
+.work-video::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 20;
+
+  top: -30%;
+  right: -30%;
+  bottom: -30%;
+  left: -30%;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 67% 48%,
+    rgba(247, 244, 239, 0) 20%,
+    rgba(247, 244, 239, 0.025) 38%,
+    rgba(247, 244, 239, 0.1) 55%,
+    rgba(247, 244, 239, 0.3) 70%,
+    rgba(247, 244, 239, 0.68) 84%,
+    rgba(247, 244, 239, 0.94) 94%,
+    #f7f4ef 100%
+  );
+
+  filter: blur(28px);
+
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   EXTRA RIGHT / BOTTOM FEATHER
+========================================================= */
+
+.work-video::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 25;
+
+  inset: -12%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent 60%,
+      rgba(247, 244, 239, 0.16) 76%,
+      rgba(247, 244, 239, 0.55) 91%,
+      #f7f4ef 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(247, 244, 239, 0.12) 72%,
+      rgba(247, 244, 239, 0.48) 90%,
+      #f7f4ef 100%
+    );
+
+  filter: blur(20px);
+}
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.work-project-info {
+  position: relative;
+
+  width: min(790px, 108%);
+
+  margin-right: -4%;
+
+  margin-top: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 50;
+}
+
+/* =========================================================
+   PROJECT COPY
+========================================================= */
+
+.work-project-copy {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   PROJECT TITLE ROW
+
+   ← PROJECT TITLE →
+========================================================= */
+
+.work-project-title-row {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+}
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.work-project-copy h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(34px, 3.2vw, 50px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.05em;
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+/* =========================================================
+   PROJECT TITLE ARROWS
+
+   These are now directly beside the title.
+========================================================= */
+
+.project-title-arrow {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 1px solid rgba(23, 20, 17, 0.14);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  color: var(--ink);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.project-title-arrow span {
+  display: block;
+
+  font-size: 14px;
+
+  line-height: 1;
+
+  transform: translateY(-1px);
+}
+
+.project-title-arrow:hover {
+  background: var(--ink);
+
+  border-color: var(--ink);
+
+  color: var(--paper);
+
+  transform: scale(1.07);
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.work-project-copy p {
+  width: min(680px, 90%);
+
+  margin: 12px auto 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.005em;
+
+  text-align: center;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+  .selected-work {
+    --header-height: 72px;
+  }
+
+  .device--mobile {
+    width: 300px;
+  }
+
+  .device--website {
+    width: 600px;
+  }
+
+  .device--kiosk {
+    width: 390px;
+  }
+
+  .work-video {
+    width: min(810px, 108%);
+
+    margin-right: -4%;
+  }
+
+  .work-project-info {
+    width: min(810px, 108%);
+
+    margin-right: -4%;
+  }
+
+  .work-project-copy h2 {
+    font-size: 48px;
+  }
+
+  .work-project-copy p {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   1200 - 1399
+========================================================= */
+
+@media (max-width: 1399px) {
+  .selected-work__stage {
+    grid-template-columns:
+      minmax(420px, 0.94fr)
+      minmax(500px, 1.06fr);
+  }
+
+  .device--mobile {
+    width: 280px;
+  }
+
+  .device--website {
+    width: 555px;
+  }
+
+  .device--kiosk {
+    width: 360px;
+  }
+
+  .work-video {
+    width: 108%;
+
+    margin-right: -4%;
+  }
+
+  .work-project-info {
+    width: 108%;
+
+    margin-right: -4%;
+  }
+
+  .work-project-copy h2 {
+    font-size: 44px;
+  }
+
+  .work-project-copy p {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   1100
+========================================================= */
+
+@media (max-width: 1100px) {
+  .selected-work__stage {
+    grid-template-columns:
+      minmax(380px, 0.92fr)
+      minmax(430px, 1.08fr);
+
+    gap: 5px;
+  }
+
+  .device--mobile {
+    width: 255px;
+  }
+
+  .device--website {
+    width: 500px;
+  }
+
+  .device--kiosk {
+    width: 325px;
+  }
+
+  .work-video {
+    width: 108%;
+  }
+
+  .work-project-copy h2 {
+    font-size: 40px;
+  }
+
+  .work-project-copy p {
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  .work-project-title-row {
+    gap: 14px;
+  }
+
+  .project-title-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .project-title-arrow span {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   900
+========================================================= */
+
+@media (max-width: 900px) {
+  .selected-work {
+    --header-height: 68px;
+  }
+
+  .selected-work__inner {
+    padding-left: 24px;
+
+    padding-right: 24px;
+  }
+
+  .selected-work__stage {
+    grid-template-columns:
+      minmax(320px, 0.9fr)
+      minmax(360px, 1.1fr);
+  }
+
+  .device--mobile {
+    width: 230px;
+  }
+
+  .device--website {
+    width: 450px;
+  }
+
+  .device--kiosk {
+    width: 295px;
+  }
+
+  .work-video {
+    width: 110%;
+
+    margin-right: -6%;
+  }
+
+  .work-project-info {
+    width: 110%;
+
+    margin-right: -6%;
+  }
+
+  .work-project-copy h2 {
+    font-size: 35px;
+  }
+
+  .work-project-copy p {
+    width: min(430px, 90%);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+  .work-project-title-row {
+    gap: 12px;
+  }
+
+  .project-title-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .project-title-arrow span {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .selected-work {
+    --header-height: 62px;
+
+    height: calc(100dvh - var(--header-height) + var(--section-extra-height));
+
+    min-height: 600px;
+  }
+
+  /* =======================================================
+     INNER
+  ======================================================= */
+
+  .selected-work__inner {
+    padding: 7px 16px 7px;
+  }
+
+  /* =======================================================
+     TOP
+  ======================================================= */
+
+  .selected-work__top {
+    flex: 0 0 58px;
+
+    gap: 7px;
+  }
+
+  .selected-work__eyebrow {
+    font-size: 6px;
+
+    letter-spacing: 0.24em;
+  }
+
+  /* =======================================================
+     TOGGLE
+  ======================================================= */
+
+  .work-filters {
+    gap: 1px;
+
+    padding: 2px;
+  }
+
+  .work-filter {
+    min-width: 70px;
+
+    height: 27px;
+
+    padding: 0 10px;
+
+    font-size: 7px;
+  }
+
+  /* =======================================================
+     STAGE
+  ======================================================= */
+
+  .selected-work__stage {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    overflow: visible;
+  }
+
+  /* =======================================================
+     DEVICE
+  ======================================================= */
+
+  .work-device-area {
+    width: 100%;
+
+    height: 42%;
+
+    min-height: 250px;
+
+    flex-shrink: 0;
+  }
+
+  .device--mobile {
+    width: 190px;
+  }
+
+  .device--website {
+    width: 88vw;
+
+    max-width: 480px;
+  }
+
+  .device--kiosk {
+    width: 215px;
+  }
+
+  /* =======================================================
+     VIDEO
+  ======================================================= */
+
+  .work-right {
+    width: 100%;
+
+    height: 58%;
+
+    min-height: 0;
+  }
+
+  .work-video-area {
+    width: 100%;
+
+    height: 58%;
+
+    min-height: 145px;
+  }
+
+  .work-video {
+    width: 125%;
+
+    height: 100%;
+
+    margin-right: -11%;
+  }
+
+  /* =======================================================
+     PROJECT INFO
+  ======================================================= */
+
+  .work-project-info {
+    width: 100%;
+
+    margin: -3px 0 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+  .work-project-copy {
+    width: 100%;
+  }
+
+  /* =======================================================
+     PROJECT TITLE
+  ======================================================= */
+
+  .work-project-title-row {
+    gap: 10px;
+
+    width: 100%;
+  }
+
+  .work-project-copy h2 {
+    max-width: calc(100% - 80px);
+
+    font-size: clamp(26px, 7vw, 36px);
+
+    line-height: 0.95;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  /* =======================================================
+     TITLE ARROWS
+  ======================================================= */
+
+  .project-title-arrow {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+  }
+
+  .project-title-arrow span {
+    font-size: 12px;
+  }
+
+  /* =======================================================
+     DESCRIPTION
+  ======================================================= */
+
+  .work-project-copy p {
+    width: 95%;
+
+    max-width: 480px;
+
+    margin-top: 8px;
+
+    font-size: 9.5px;
+
+    line-height: 1.5;
+  }
+
+  /* =======================================================
+     SCREEN ARROWS
+  ======================================================= */
+
+  .screen-arrow {
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .selected-work {
+    min-height: 580px;
+  }
+
+  .selected-work__inner {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+  .selected-work__top {
+    flex-basis: 55px;
+  }
+
+  .work-device-area {
+    min-height: 225px;
+  }
+
+  .device--mobile {
+    width: 175px;
+  }
+
+  .device--website {
+    width: 86vw;
+  }
+
+  .device--kiosk {
+    width: 200px;
+  }
+
+  .work-video-area {
+    min-height: 130px;
+  }
+
+  .work-video {
+    width: 135%;
+
+    margin-right: -13%;
+  }
+
+  .work-project-title-row {
+    gap: 8px;
+  }
+
+  .work-project-copy h2 {
+    max-width: calc(100% - 70px);
+
+    font-size: 25px;
+  }
+
+  .project-title-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .project-title-arrow span {
+    font-size: 11px;
+  }
+
+  .work-project-copy p {
+    width: 96%;
+
+    font-size: 8.5px;
+
+    line-height: 1.45;
+  }
+}

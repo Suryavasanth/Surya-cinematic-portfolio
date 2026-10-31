@@ -1,0 +1,1416 @@
+/* =========================================
+   CONTACT — GLOBAL
+========================================= */
+
+.contact-section {
+  --contact-accent: #bd7049;
+  --contact-text: #191816;
+  --contact-muted: #77736e;
+  --contact-line: #dedbd6;
+
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  max-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  background: #fff;
+  color: var(--contact-text);
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.contact-container {
+  width: min(90%, 1440px);
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+
+  padding: 28px 28px 28px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: clamp(18px, 3vh, 34px);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #77716a;
+}
+
+.contact-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--contact-accent);
+}
+
+.contact-eyebrow-number {
+  margin-left: 18px;
+  color: #aaa39b;
+  font-weight: 400;
+}
+
+.contact-heading h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 86px);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+  font-weight: 800;
+
+  color: var(--contact-text);
+}
+
+.contact-heading h2 span {
+  color: var(--contact-accent);
+}
+
+.contact-description {
+  max-width: 390px;
+  margin: 20px 0 0;
+
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+
+  color: var(--contact-muted);
+}
+
+/* =========================================
+   CONTACT DETAILS
+========================================= */
+
+.contact-details {
+  width: min(100%, 460px);
+  margin-top: clamp(20px, 3vh, 34px);
+}
+
+.contact-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid var(--contact-line);
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-detail:first-child {
+  border-top: 1px solid var(--contact-line);
+}
+
+.contact-detail-label {
+  flex-shrink: 0;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #98918a;
+}
+
+.contact-detail-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--contact-text);
+
+  transition: color 0.3s ease;
+}
+
+.contact-detail-arrow {
+  color: var(--contact-accent);
+  transition: transform 0.3s ease;
+}
+
+.contact-detail:hover .contact-detail-value {
+  color: var(--contact-accent);
+}
+
+.contact-detail:hover .contact-detail-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.contact-socials {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 17px;
+}
+
+.contact-social-link {
+  text-decoration: none;
+
+  color: var(--contact-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  transition: color 0.3s ease;
+}
+
+.contact-social-link span {
+  display: inline-block;
+  margin-left: 5px;
+  color: var(--contact-accent);
+
+  transition: transform 0.3s ease;
+}
+
+.contact-social-link:hover {
+  color: var(--contact-accent);
+}
+
+.contact-social-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.contact-cta {
+  width: min(100%, 460px);
+  min-height: 54px;
+
+  margin-top: 27px;
+  padding: 0 22px;
+
+  border: 1px solid var(--contact-text);
+  background: var(--contact-text);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.contact-cta-arrow {
+  font-size: 19px;
+  transition: transform 0.35s ease;
+}
+
+.contact-cta:hover {
+  background: var(--contact-accent);
+  border-color: var(--contact-accent);
+}
+
+.contact-cta:hover .contact-cta-arrow {
+  transform: translate(4px, -4px);
+}
+
+.contact-cta-note {
+  margin: 9px 0 0;
+
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: #aaa39b;
+}
+
+/* =========================================
+   RIGHT VIDEO — 45%
+========================================= */
+
+.contact-visual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: #fff;
+}
+
+.contact-video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+
+  /*
+    Keep the entire sofa and person visible.
+    Do not scale or crop the original video.
+  */
+  transform: none;
+
+  /*
+    Lift the light studio background towards white
+    while retaining the black suit details.
+  */
+  filter: brightness(1.1) contrast(1.06) saturate(0.96);
+
+  /*
+    For a near-white video background, multiply
+    helps it visually blend into the white section.
+  */
+  mix-blend-mode: multiply;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.contact-footer {
+  flex: 0 0 48px;
+
+  width: min(90%, 1440px);
+  min-height: 48px;
+  height: 48px;
+
+  margin: 0 auto;
+
+  border-top: 1px solid var(--contact-line);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: #99928a;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+
+.contact-footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-footer a:hover {
+  color: var(--contact-accent);
+}
+
+/* =========================================
+   LETTER OVERLAY
+========================================= */
+
+.letter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  max-height: 100svh;
+
+  padding: 12px;
+
+  background: rgba(20, 18, 16, 0.74);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  animation: letterOverlayIn 0.35s ease both;
+}
+
+@keyframes letterOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.letter-stage {
+  position: relative;
+
+  width: min(100%, 620px);
+  max-height: calc(100svh - 24px);
+
+  margin: auto;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   VINTAGE ENVELOPE
+========================================= */
+
+.letter-envelope {
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  top: 50%;
+
+  width: 250px;
+  height: 165px;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  animation: envelopeDisappear 0.8s 0.45s ease forwards;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+
+  background: #d8c5a5;
+  border-radius: 4px;
+}
+
+.envelope-paper {
+  position: absolute;
+  z-index: 1;
+
+  left: 8%;
+  top: 10%;
+
+  width: 84%;
+  height: 80%;
+
+  background: #f3e8d5;
+
+  transform: translateY(0);
+  animation: envelopePaperRise 0.6s 0.7s ease forwards;
+}
+
+.envelope-front {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+
+  background: #eadcc3;
+
+  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 4;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: #cbb48f;
+
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+
+  transform-origin: top center;
+
+  animation: envelopeFlapOpen 0.7s 0.35s ease forwards;
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 5;
+
+  top: 47%;
+  left: 50%;
+
+  width: 37px;
+  height: 37px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  transform: translate(-50%, -50%);
+
+  background: #814536;
+  color: #f4e4cb;
+  border: 2px solid #a66c52;
+
+  font-family: Georgia, serif;
+  font-size: 17px;
+
+  animation: sealDisappear 0.4s 0.25s ease forwards;
+}
+
+@keyframes envelopeFlapOpen {
+  to {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes envelopePaperRise {
+  to {
+    transform: translateY(-45%);
+  }
+}
+
+@keyframes sealDisappear {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+
+@keyframes envelopeDisappear {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0.7;
+    transform: translate(-50%, -65%) scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -90%) scale(0.8);
+  }
+}
+
+/* =========================================
+   LETTER PAPER
+========================================= */
+
+.letter-paper {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-height: calc(100svh - 24px);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: #b9a78f transparent;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)),
+    #eee2ca;
+
+  color: #493b2d;
+
+  border: 1px solid #d3c2a5;
+
+  box-shadow:
+    0 25px 90px rgba(0, 0, 0, 0.3),
+    inset 0 0 45px rgba(151, 117, 76, 0.06);
+
+  transform-origin: center top;
+
+  opacity: 0;
+
+  animation: letterUnfold 0.85s 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes letterUnfold {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scaleY(0.12);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scaleY(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.letter-paper-inner {
+  padding: clamp(20px, 3vh, 32px) clamp(22px, 5vw, 54px);
+}
+
+/* =========================================
+   LETTER HEADER
+========================================= */
+
+.letter-topline,
+.letter-bottomline {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  color: #9b866b;
+
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+
+.letter-greeting {
+  margin: clamp(16px, 2.5vh, 28px) 0;
+  text-align: center;
+}
+
+.letter-greeting h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 4vw, 36px);
+  font-weight: 400;
+  font-style: italic;
+
+  color: #493b2d;
+}
+
+.letter-greeting p {
+  max-width: 370px;
+
+  margin: 10px auto 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.65;
+
+  color: #79674f;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.letter-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(11px, 1.7vh, 18px);
+}
+
+.letter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.letter-field label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #826c50;
+}
+
+.letter-field input,
+.letter-field textarea {
+  width: 100%;
+
+  padding: 7px 0 9px;
+
+  border: 0;
+  border-bottom: 1px solid #bca98d;
+  border-radius: 0;
+
+  outline: none;
+  background: transparent;
+
+  color: #493b2d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+
+  resize: vertical;
+}
+
+.letter-field textarea {
+  min-height: 55px;
+  max-height: 90px;
+}
+
+.letter-field input::placeholder,
+.letter-field textarea::placeholder {
+  color: #a39177;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.letter-field input:focus,
+.letter-field textarea:focus {
+  border-bottom-color: #8d573d;
+}
+
+.letter-field input[aria-invalid="true"],
+.letter-field textarea[aria-invalid="true"] {
+  border-bottom-color: #a14f32;
+}
+
+.letter-field-error {
+  color: #8d4a2d;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.letter-submit-status {
+  margin: 0;
+  color: #7b4a32;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+.letter-success {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 10px 8px;
+  text-align: center;
+}
+
+.letter-success h3 {
+  margin: 0;
+  color: #2d2a27;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.letter-success p {
+  margin: 0;
+  color: #5d4939;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   LETTER SIGNATURE
+========================================= */
+
+.letter-signoff {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 3px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  color: #78634b;
+  font-style: italic;
+}
+
+.letter-signoff strong {
+  font-size: 27px;
+  font-weight: 400;
+  color: #493b2d;
+}
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.letter-send {
+  min-height: 48px;
+  padding: 0 20px;
+
+  border: 0;
+  background: #493b2d;
+  color: #f4e8d4;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.letter-send:hover:not(:disabled) {
+  background: #8c5439;
+}
+
+.letter-send:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.letter-bottomline {
+  margin-top: 18px;
+  padding-top: 12px;
+
+  border-top: 1px solid #cabb9f;
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.letter-close {
+  position: absolute;
+  z-index: 5;
+
+  top: -12px;
+  right: -12px;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  background: #24211e;
+  color: #fff;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.letter-close:hover {
+  transform: rotate(90deg);
+  background: #8c5439;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) and (min-width: 701px) {
+  .contact-container {
+    width: 94%;
+    grid-template-columns: 54% 46%;
+  }
+
+  .contact-content {
+    padding-right: 16px;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(42px, 6vw, 66px);
+  }
+
+  .contact-description {
+    max-width: 330px;
+    font-size: 12px;
+  }
+
+  .contact-details {
+    margin-top: 20px;
+  }
+
+  .contact-detail {
+    padding: 10px 0;
+  }
+
+  .contact-cta {
+    margin-top: 20px;
+  }
+}
+
+/* =========================================
+   MOBILE — STRICT 100SVH
+========================================= */
+
+@media (max-width: 700px) {
+  .letter-overlay {
+    padding: 8px;
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .letter-stage {
+    width: 100%;
+    max-height: calc(100svh - 16px);
+  }
+
+  .letter-paper {
+    max-height: calc(100svh - 16px);
+    overflow-y: auto;
+  }
+
+  .letter-paper-inner {
+    padding: 18px 18px 15px;
+  }
+
+  .letter-greeting {
+    margin: 14px 0;
+  }
+
+  .letter-greeting h2 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+
+  .letter-greeting p {
+    font-size: 11px;
+    margin-top: 7px;
+  }
+
+  .letter-form {
+    gap: 11px;
+  }
+
+  .letter-field {
+    gap: 4px;
+  }
+
+  .letter-field label {
+    font-size: 8px;
+  }
+
+  .letter-field input,
+  .letter-field textarea {
+    font-size: 12px;
+    padding: 4px 0 6px;
+  }
+
+  .letter-field textarea {
+    min-height: 42px;
+    max-height: 60px;
+  }
+
+  .letter-signoff strong {
+    font-size: 22px;
+  }
+
+  .letter-send {
+    min-height: 42px;
+    font-size: 9px;
+  }
+
+  .letter-bottomline {
+    margin-top: 11px;
+    padding-top: 9px;
+    font-size: 7px;
+  }
+
+  .letter-close {
+    top: -5px;
+    right: 2px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .contact-description {
+    font-size: 10px;
+  }
+
+  .contact-detail-value {
+    font-size: 9px;
+  }
+
+  .letter-paper-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* =========================================
+   SHORT VIEWPORTS
+========================================= */
+
+@media (max-height: 740px) and (min-width: 701px) {
+  .contact-eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(42px, 5vw, 65px);
+  }
+
+  .contact-description {
+    margin-top: 12px;
+  }
+
+  .contact-details {
+    margin-top: 16px;
+  }
+
+  .contact-detail {
+    padding: 8px 0;
+  }
+
+  .contact-socials {
+    padding-top: 10px;
+  }
+
+  .contact-cta {
+    min-height: 46px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-height: 680px) {
+  .letter-paper-inner {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .letter-greeting {
+    margin: 10px 0;
+  }
+
+  .letter-form {
+    gap: 9px;
+  }
+
+  .letter-field textarea {
+    min-height: 38px;
+    max-height: 48px;
+  }
+
+  .letter-bottomline {
+    margin-top: 9px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section *,
+  .letter-overlay *,
+  .letter-overlay *::before,
+  .letter-overlay *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   CONTACT — FULL BLEED RIGHT VIDEO
+   EDGE-TO-EDGE / NO RIGHT GAP
+========================================= */
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  max-height: 100svh;
+  overflow: hidden;
+  background: #fff;
+  isolation: isolate;
+}
+
+/* Main content area */
+.contact-container {
+  position: static;
+  width: 100%;
+  height: calc(100% - 48px);
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: 100%;
+  margin: 0;
+  display: block;
+}
+
+/* Left side content */
+.contact-content {
+  position: absolute;
+  z-index: 3;
+
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 49%;
+  max-width: 650px;
+
+  padding: 20px 20px 20px 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* =========================================
+   VIDEO POSITION — EXTREME RIGHT
+========================================= */
+
+.contact-visual {
+  position: absolute;
+  z-index: 1;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 48%;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  overflow: hidden;
+  background: #fff;
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   VIDEO — PRESERVE FULL FRAME
+========================================= */
+
+.contact-video {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+
+  /*
+    Preserve the complete portrait video.
+    Do not crop the person, hands or sofa.
+  */
+  object-fit: contain;
+  object-position: right center;
+
+  margin: 0;
+  padding: 0;
+
+  background: #fff;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  transform: none;
+
+  /*
+    Neutralize the warm grey video background.
+    Keep black suit details visible.
+  */
+  filter: brightness(1.18) contrast(1.07) saturate(0.72);
+
+  mix-blend-mode: normal;
+}
+
+/* No artificial glow or overlay */
+.contact-visual::before,
+.contact-visual::after {
+  content: none;
+}
+
+/* Footer */
+.contact-footer {
+  position: relative;
+  z-index: 4;
+
+  flex: 0 0 48px;
+  height: 48px;
+  min-height: 48px;
+
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) and (min-width: 701px) {
+  .contact-content {
+    left: 4%;
+    width: 52%;
+    padding-right: 12px;
+  }
+
+  .contact-visual {
+    width: 48%;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(42px, 5.5vw, 66px);
+  }
+
+  .contact-description {
+    max-width: 320px;
+  }
+}
+
+/* =========================================
+   MOBILE — STRICT 100SVH
+========================================= */
+
+@media (max-width: 700px) {
+  .contact-section {
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .contact-container {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    min-height: calc(100svh - 40px);
+    max-height: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    flex: 1 0 auto;
+    margin: 0;
+    padding: 70px 18px 0;
+    overflow: visible;
+  }
+
+  .contact-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 100%;
+    max-width: none;
+
+    flex: 0 0 auto;
+    min-height: 0;
+    max-height: none;
+
+    padding: 0;
+
+    justify-content: flex-start;
+    overflow: visible;
+  }
+
+  .contact-eyebrow {
+    margin-bottom: 12px;
+    font-size: 8px;
+    gap: 9px;
+  }
+
+  .contact-eyebrow-line {
+    width: 20px;
+  }
+
+  .contact-eyebrow-number {
+    margin-left: 8px;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(32px, 9.5vw, 39px);
+    line-height: 0.93;
+  }
+
+  .contact-description {
+    max-width: 330px;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .contact-details {
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .contact-detail {
+    padding: 7px 0;
+  }
+
+  .contact-detail-label {
+    font-size: 8px;
+  }
+
+  .contact-detail-value {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .contact-socials {
+    gap: 23px;
+    padding-top: 9px;
+  }
+
+  .contact-social-link {
+    font-size: 9px;
+  }
+
+  .contact-cta {
+    width: 100%;
+    min-height: 42px;
+    margin-top: 12px;
+    padding: 0 14px;
+    font-size: 9px;
+  }
+
+  .contact-cta-note {
+    margin-top: 6px;
+    font-size: 7px;
+  }
+
+  /*
+    Keep the original video frame intact while letting it fill the lower
+    portion of the section and reach the viewport's right edge.
+  */
+  .contact-visual {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+
+    align-self: stretch;
+    width: calc(100% + 36px);
+    height: auto;
+    min-height: clamp(300px, 49svh, 400px);
+    max-height: none;
+    flex: 0 0 clamp(300px, 49svh, 400px);
+    margin: 0 -18px;
+
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .contact-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: right bottom;
+
+    transform: none;
+  }
+
+  .contact-footer {
+    width: calc(100% - 36px);
+    flex: 0 0 40px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 7px;
+  }
+
+  .contact-footer span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 740px) {
+  .contact-container {
+    padding-top: 62px;
+  }
+
+  .contact-content {
+    flex-shrink: 0;
+  }
+
+  .contact-visual {
+    min-height: clamp(260px, 45svh, 340px);
+    flex-basis: clamp(260px, 45svh, 340px);
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .contact-visual {
+    width: calc(100% + 30px);
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .contact-cta {
+    min-height: 40px;
+  }
+}

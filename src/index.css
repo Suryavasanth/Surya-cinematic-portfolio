@@ -1,0 +1,252 @@
+:root {
+  --text: #5f5954;
+  --text-h: #111111;
+
+  --bg: #f7f5f1;
+
+  --border: #e5e1dc;
+
+  --code-bg: #f1eee9;
+
+  --accent: #bd7049;
+
+  --accent-bg: rgba(200, 102, 50, 0.1);
+
+  --accent-border: rgba(200, 102, 50, 0.4);
+
+  --social-bg: rgba(245, 242, 237, 0.7);
+
+  --shadow:
+    rgba(0, 0, 0, 0.08) 0 10px 15px -3px, rgba(0, 0, 0, 0.04) 0 4px 6px -2px;
+
+  --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --heading: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --mono: ui-monospace, Consolas, monospace;
+
+  --section-ink: #191816;
+
+  --section-accent: #bd7049;
+
+  --reveal-duration: 0.85s;
+
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+  font: 18px / 145% var(--sans);
+
+  letter-spacing: 0.18px;
+
+  color-scheme: light;
+
+  color: var(--text);
+
+  background: var(--bg);
+
+  font-synthesis: none;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+
+  background: #f7f5f1;
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 100%;
+
+  max-width: none;
+
+  min-height: 100svh;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+
+  font-weight: 500;
+
+  color: var(--text-h);
+}
+
+.section-heading,
+.section-heading h2,
+.section-heading h3 {
+  font-family: var(--heading);
+
+  letter-spacing: -0.06em;
+}
+
+.two-tone-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  font-family: var(--heading);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.08em;
+}
+
+.two-tone-heading .accent {
+  color: var(--section-accent);
+}
+
+h1 {
+  font-size: 56px;
+
+  letter-spacing: -1.68px;
+
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+
+  line-height: 118%;
+
+  letter-spacing: -0.24px;
+
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+}
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code,
+.counter {
+  font-family: var(--mono);
+
+  display: inline-flex;
+
+  border-radius: 4px;
+
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+
+  line-height: 135%;
+
+  padding: 4px 8px;
+
+  background: var(--code-bg);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px;
+}
+
+/* Prevent sections from hiding behind fixed header */
+#home,
+#about,
+#stack,
+#work,
+#contact {
+  scroll-margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 0px;
+  }
+
+  #home,
+  #about,
+  #stack,
+  #work,
+  #contact {
+    scroll-margin-top: 0px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
